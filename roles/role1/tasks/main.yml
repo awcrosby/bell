@@ -1,35 +1,21 @@
 ---
 # tasks file for role1
 
-- name: Copy local file to remote
+- name:  Copy local file to remote
   sudo: true
   copy:
     src: vars.yml
-    dest: "{{ dest_proj_path }}/config/ansible/vars.yml"
-- name: Apply patch to one file
+    src: vars.yml
+    dest: "{{  dest_proj_path }}/config/ansible/vars.yml"
+
+
+
+
+
+- name:Apply patch to one file
   patch:
     src: /tmp/index.html.patch
     dest: /var/www/index.html
 - name: Apply patch with patch module
   patch:
     shell: patch index.html index.html.patch
-- name: Apply patch with shell module
-  shell: patch index.html index.html.patch
-- name: return motd to registered var
-  command: git pull
-  register: mymotd
-- name: Ensure the floppy disk is mounted.
-  mount:
-    name: /mnt/floppy
-    src: /dev/fd0
-    fstype: fuse
-    opts0: "allow_other,user = = = = = nobody,nonempty"
-    opts1: "allow_other,user=nobody,nonempty"
-    opts2: "allow_other,user=nobody,nonempty"
-    opts3: "allow_other,user=nobody,nonempty"
-    opts: "allow_other,user=nobody,nonempty"
-    dump: 0
-    passno: 0
-    state: mounted
-- name: Ensure the floppy disk is mounted.
-  mount: "name=/mnt/floppy src=/dev/fd0 fstype=fuse opts=allow_other,user=nobody,nonempty dump=0 passno=0 state=mounted"
