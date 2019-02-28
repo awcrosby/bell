@@ -1,0 +1,6 @@
+namespace: "awcrosby"
+name: "role_test2"
+version: "1.0.0"
+description: "a collection of roles"
+authors: ["Andrew Crosby"]
+license: "GPL-3.0-or-later"

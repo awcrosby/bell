@@ -1,21 +1,35 @@
 ---
-# tasks file for role1
-
-- name:  Copy local file to remote
-  sudo: true
-  copy:
-    src: vars.yml
-    src: vars.yml
-    dest: "{{  dest_proj_path }}/config/ansible/vars.yml"
-
-
-
-
-
-- name:Apply patch to one file
-  patch:
-    src: /tmp/index.html.patch
-    dest: /var/www/index.html
-- name: Apply patch with patch module
-  patch:
-    shell: patch index.html index.html.patch
+- name: ensure apache is at the latest version
+  become_user: alice
+  yum: # noqa 405 501
+    name: httpd
+    state: present
+  when: my_var == true  # noqa 601
+- name: download file
+  get_url:
+    url: http://example.com/file.conf
+    dest: "{{dest_proj_path}}/foo.conf" # noqa 206
+- name: ensure apache is at the latest version
+  become_user: alice
+  yum:
+    name: httpd
+    state: present
+  when: my_var == true  # noqa 601
+- name: ensure apache is at the latest version
+  become_user: alice
+  yum:
+    name: httpd
+    state: present
+  when: my_var == true  # noqa 601
+- name: ensure apache is at the latest version
+  become_user: alice
+  yum:
+    name: httpd
+    state: present
+  when: my_var == true  # noqa 601
+- name: ensure apache is at the latest version
+  become_user: alice
+  yum:
+    name: httpd
+    state: present
+  when: my_var == true  # noqa 601

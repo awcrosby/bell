@@ -14,7 +14,7 @@ galaxy_info:
   # - GPLv3
   # - Apache
   # - CC-BY
-  license: GPLv2
+  license: THIS-IS-NOT-A-VALID-LICENSE
 
   min_ansible_version: 1.2
 

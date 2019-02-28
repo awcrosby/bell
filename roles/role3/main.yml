@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  # author: the author
+  description: Testing if meta contains values
+  company: Not applicable
+
+  license: MIT
+
+  min_ansible_version: 2.5
+
+  platforms:
+  - name: Fedora
+    versions:
+    - 25
+  - missing_name: No name
+    versions:
+    - 25
