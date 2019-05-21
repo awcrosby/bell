@@ -1,5 +1,0 @@
----
-- name: using git module
-  action: git repo=blah
-
-# - include: databases.yml
